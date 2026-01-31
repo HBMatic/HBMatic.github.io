@@ -10,43 +10,48 @@
   <style>
     :root{
       --bg: #0b1220;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.03);
-      --line: rgba(255,255,255,.10);
+      --surface: #0f172a;     /* main panel */
+      --surface2: #0c1426;    /* card */
+      --line: rgba(255,255,255,.12);
       --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --muted2: rgba(255,255,255,.58);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.60);
       --accent: #7c5cff;
-      --accent2:#2ee59d;
-      --shadow: 0 14px 40px rgba(0,0,0,.35);
-      --radius: 18px;
+      --radius: 14px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: var(--sans);
       color: var(--text);
-      background:
-        radial-gradient(1100px 700px at 15% -10%, rgba(124,92,255,.33), transparent 60%),
-        radial-gradient(900px 600px at 105% 10%, rgba(46,229,157,.20), transparent 55%),
-        var(--bg);
-      line-height:1.6;
+      background: var(--bg);           /* flat, minimal */
+      line-height:1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
     a{color:inherit; text-decoration:none}
     a:hover{opacity:.92}
+    a:focus-visible{
+      outline: 2px solid rgba(124,92,255,.75);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+
     .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:24px 16px 70px;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 22px 16px 64px;
     }
 
     /* Layout */
     .layout{
       display:grid;
-      grid-template-columns: 320px 1fr;
+      grid-template-columns: 310px 1fr;
       gap:16px;
       align-items:start;
     }
@@ -56,13 +61,13 @@
 
     /* Panels */
     .panel{
-      background: linear-gradient(180deg, var(--panel), var(--panel2));
-      border:1px solid var(--line);
+      background: var(--surface);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: none;
     }
     .pad{padding:16px}
-    .pad-lg{padding:18px}
+    .pad-lg{padding:16px}
     .sep{height:1px; background:var(--line); margin:14px 0}
 
     /* Sidebar */
@@ -75,46 +80,48 @@
     }
 
     .name{
-      font-size: 24px;
+      font-size: 22px;
       margin: 0 0 6px;
       letter-spacing: .2px;
     }
     .role{
       margin:0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13.5px;
     }
     .tagline{
       margin:10px 0 0;
       color: var(--muted2);
       font-size: 13.5px;
     }
+
     .pillbar{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .pill{
       font-size:12px;
-      padding:6px 10px;
+      padding:5px 9px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: rgba(255,255,255,.85);
+      background: transparent;
+      color: rgba(255,255,255,.84);
       white-space:nowrap;
     }
+
     .btnrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:9px 11px;
+      padding:8px 10px;
       border-radius:12px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      background: transparent;
       font-weight: 600;
       font-size: 13px;
     }
     .btn.primary{
-      border:none;
-      color:#0b1220;
-      background: linear-gradient(135deg, rgba(124,92,255,.96), rgba(46,229,157,.68));
+      border-color: rgba(124,92,255,.55);
+      background: rgba(124,92,255,.12);
+      color: var(--text);
     }
 
     .nav{
@@ -129,36 +136,37 @@
       border-radius: 12px;
     }
     .nav a:hover{
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.04);
       color: var(--text);
     }
 
     /* Main */
     h2{
       margin:0 0 10px;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: .2px;
     }
     p{margin:0 0 10px; color: var(--muted)}
+
     .hero{
-      padding:18px;
+      padding:16px;
       border-radius: var(--radius);
       border:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
+      background: var(--surface);
+      box-shadow: none;
     }
     .hero h1{
       margin:0 0 10px;
-      font-size: 30px;
-      line-height:1.15;
+      font-size: 26px;
+      line-height:1.2;
       color: var(--text);
     }
     .hero .sub{
       margin:0;
       color: var(--muted);
-      font-size: 14.5px;
+      font-size: 14px;
     }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -172,7 +180,7 @@
       padding:14px;
       border-radius: var(--radius);
       border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background: var(--surface2);
     }
     .card h3{
       margin:0 0 6px;
@@ -184,6 +192,7 @@
       color: var(--muted2);
       margin-bottom: 8px;
     }
+
     .bullets{
       margin: 8px 0 0;
       padding-left: 18px;
@@ -191,6 +200,7 @@
       font-size: 13.5px;
     }
     .bullets li{margin:6px 0}
+
     .links{
       display:flex;
       flex-wrap:wrap;
@@ -199,11 +209,21 @@
     }
     .chiplink{
       font-size:12.5px;
-      padding:6px 10px;
+      padding:5px 9px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: rgba(255,255,255,.88);
+      background: transparent;
+      color: rgba(255,255,255,.86);
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    /* Make "TODO" chips feel disabled */
+    .chiplink.todo{
+      opacity: .60;
+      cursor: default;
+      pointer-events: none;
     }
 
     .news{
@@ -213,9 +233,9 @@
     }
     .newsitem{
       padding:12px 14px;
-      border-radius: 14px;
+      border-radius: 12px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background: var(--surface2);
     }
     .newsitem b{color: var(--text)}
     .newsitem .date{
@@ -232,19 +252,20 @@
     }
     .pubitem{
       padding:12px 14px;
-      border-radius: 14px;
+      border-radius: 12px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background: var(--surface2);
     }
     .pubtitle{margin:0 0 4px; color: var(--text); font-weight:700}
     .pubmeta{margin:0; color: var(--muted); font-size: 13px}
+
     .kbd{
       font-family: var(--mono);
       font-size: 12px;
       padding: 2px 6px;
       border-radius: 8px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
+      background: transparent;
       color: rgba(255,255,255,.9);
     }
 
@@ -253,6 +274,10 @@
       color: var(--muted2);
       font-size: 12.5px;
       text-align:center;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
     }
   </style>
 </head>
@@ -283,7 +308,6 @@
             <a class="btn primary" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn" href="https://www.linkedin.com/in/harish-bhamitipadi-magesh" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="btn" href="mailto:harishbm2112@gmail.com">Email</a>
-            <!-- Put your CV PDF at /assets/Harish_BM_CV.pdf -->
             <a class="btn" href="./assets/Harish_BM_CV.pdf" target="_blank" rel="noreferrer">CV</a>
           </div>
 
@@ -302,7 +326,7 @@
           <div class="sep"></div>
 
           <p class="tagline">
-            Proof-first portfolio: link code, PDFs, logs, and demos. “Works once” isn’t a result.
+            Proof-first portfolio: code, PDFs, logs, and demos for reproducible results.
           </p>
         </div>
       </aside>
@@ -348,15 +372,14 @@
               </ul>
               <div class="links">
                 <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">GitHub (projects)</a>
-                <!-- Add specific repo/demo links when ready -->
-                <span class="chiplink" title="Add a video demo link later">Demo (TODO)</span>
-                <span class="chiplink" title="Add a write-up/PDF link later">Write-up (TODO)</span>
+                <span class="chiplink todo">Demo (coming soon)</span>
+                <span class="chiplink todo">Write-up (coming soon)</span>
               </div>
             </div>
 
             <div class="card">
               <h3>EKF Fusion: Odom + Beacon Localization (Marvelmind)</h3>
-              <div class="meta">EKF • Teleport/outlier rejection • Frame alignment • Real data</div>
+              <div class="meta">EKF • Outlier rejection • Frame alignment • Real data</div>
               <ul class="bullets">
                 <li>Fused wheel odometry with external beacon measurements to align robots into a common global frame.</li>
                 <li>Built practical guards for deployment: jump/teleport rejection, DC-shift alignment, and consistent frame transforms.</li>
@@ -364,7 +387,7 @@
               </ul>
               <div class="links">
                 <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
-                <span class="chiplink" title="Add logs/dataset link later">Logs/Dataset (TODO)</span>
+                <span class="chiplink todo">Logs/Dataset (coming soon)</span>
               </div>
             </div>
 
@@ -378,7 +401,7 @@
               </ul>
               <div class="links">
                 <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
-                <span class="chiplink" title="Add results page later">Results (TODO)</span>
+                <span class="chiplink todo">Results (coming soon)</span>
               </div>
             </div>
 
@@ -402,9 +425,10 @@
           <div class="pad-lg">
             <h2>News</h2>
             <div class="news">
-              <div class="newsitem"><span class="date">2025</span><b>Presented first-author work</b> — “Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions” at Indian Control Conference (IISc Bengaluru).</div>
-              <div class="newsitem"><span class="date">2024-11</span><b>Joined IIT Madras</b> — Research Associate (Game Theory & Multi-Agent Systems Lab): multi-robot testbed + experimental evaluation.</div>
-              <div class="newsitem"><span class="date">2024-03 → 2024-08</span><b>Research internship at CMU</b> — Biorobotics Lab: deployed & stabilized TurtleBot4 multi-robot stack; explored coordination baselines.</div>
+              <!-- Made date format consistent: Mon YYYY -->
+              <div class="newsitem"><span class="date">Dec 2025</span><b>Presented first-author work</b> — “Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions” at Indian Control Conference (IISc Bengaluru).</div>
+              <div class="newsitem"><span class="date">Nov 2024</span><b>Joined IIT Madras</b> — Research Associate (Game Theory & Multi-Agent Systems Lab): multi-robot testbed + experimental evaluation.</div>
+              <div class="newsitem"><span class="date">Mar–Aug 2024</span><b>Research internship at CMU</b> — Biorobotics Lab: deployed & stabilized TurtleBot4 multi-robot stack; explored coordination baselines.</div>
               <div class="newsitem"><span class="date">2024</span><b>Desh Videsh Research Scholarship</b> — supported study-abroad research exposure and deployment work.</div>
             </div>
           </div>
@@ -413,27 +437,27 @@
         <section id="publications" class="panel" style="margin-top:16px;">
           <div class="pad-lg">
             <h2>Publications</h2>
-            <p>
-              Keep it strict: title, venue, year, links.
-            </p>
+            <p>Keep it strict: title, venue, year, links.</p>
+
             <div class="pub">
               <div class="pubitem">
                 <div class="pubtitle">Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions</div>
                 <p class="pubmeta">
                   Indian Control Conference (ICC), 2025 • Authors: Harish B.M. et al.
-                  <!-- Add links when you have them -->
-                  <span class="chiplink" title="Add PDF link when available">PDF (TODO)</span>
-                  <span class="chiplink" title="Add code link when available">Code (TODO)</span>
+                  <span class="chiplink todo">PDF (coming soon)</span>
+                  <span class="chiplink todo">Code (coming soon)</span>
                 </p>
               </div>
+
               <div class="pubitem">
                 <div class="pubtitle">Extended journal submission (in preparation)</div>
                 <p class="pubmeta">
                   Expanded experimental validation + analysis of multi-robot ATAD interactions under real-world uncertainty.
-                  <span class="chiplink" title="Add preprint link when ready">Preprint (TODO)</span>
+                  <span class="chiplink todo">Preprint (coming soon)</span>
                 </p>
               </div>
             </div>
+
             <p class="pubmeta" style="margin-top:10px;">
               Optional later: add a <span class="kbd">BibTeX</span> button for each publication.
             </p>
@@ -443,18 +467,18 @@
         <section id="projects" class="panel" style="margin-top:16px;">
           <div class="pad-lg">
             <h2>Projects (additional)</h2>
-            <p>
-              Smaller items: course projects, utilities, demos, write-ups. Add real links as you publish them.
-            </p>
+            <p>Smaller items: course projects, utilities, demos, write-ups. Add real links as you publish them.</p>
+
             <ul class="bullets">
-              <li><b>Autonomous Navigation for Tugger AGVs (ROS2 + Gazebo)</b> — full autonomy stack (mapping, localization, planning) with robustness-focused tuning and edge-case handling.</li>
-              <li><b>Feedback Linearization for Differential-Drive Robot</b> — trajectory tracking study in simulation with logging and error analysis.</li>
-              <li><b>Multi-robot odometry + localization analysis</b> — encoder noise characterization, drift studies, and alignment strategies for global-frame consistency.</li>
-              <li><b>Utilities & workflows</b> — ROS2 tooling, logging scripts, documentation templates for reproducible experiments.</li>
+              <li><b>Autonomous Navigation for Tugger AGVs (ROS2 + Gazebo)</b> — autonomy stack (mapping, localization, planning) with robustness-focused tuning.</li>
+              <li><b>Feedback Linearization for Differential-Drive Robot</b> — trajectory tracking study with logging and error analysis.</li>
+              <li><b>Multi-robot odometry + localization analysis</b> — encoder noise characterization, drift studies, and alignment strategies.</li>
+              <li><b>Utilities & workflows</b> — ROS2 tooling, logging scripts, and documentation templates for reproducible experiments.</li>
             </ul>
+
             <div class="links">
               <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Browse repos on GitHub</a>
-              <span class="chiplink" title="Add a consolidated write-up page later">Project Index (TODO)</span>
+              <span class="chiplink todo">Project Index (coming soon)</span>
             </div>
           </div>
         </section>
@@ -472,6 +496,7 @@
                   <li><b>Multi-robot systems:</b> synchronized deployments, repeatable experimental pipelines, logging + evaluation</li>
                 </ul>
               </div>
+
               <div class="card">
                 <h3>Tools & Tech</h3>
                 <ul class="bullets">
@@ -488,9 +513,8 @@
         <section id="contact" class="panel" style="margin-top:16px;">
           <div class="pad-lg">
             <h2>Contact</h2>
-            <p>
-              Email is best. If you want collaboration, say what you’re currently looking for.
-            </p>
+            <p>Email is best. If you want collaboration, say what you’re currently looking for.</p>
+
             <ul class="bullets">
               <li>Email: <a href="mailto:harishbm2112@gmail.com">harishbm2112@gmail.com</a></li>
               <li>GitHub: <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">HBMatic</a></li>
