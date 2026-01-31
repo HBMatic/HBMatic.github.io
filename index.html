@@ -1,539 +1,346 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Harish BM — Robotics Portfolio</title>
-  <meta name="description" content="Harish Bhamitipadi Magesh (Harish BM) — Multi-agent robotics, motion planning, estimation & control, real deployments on TurtleBots." />
-  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Harish Bhamitipadi Magesh</title>
+  <meta name="author" content="Harish Bhamitipadi Magesh">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Optional favicon (add your own file at /images/favicon.ico) -->
+  <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> -->
 
   <style>
     :root{
-      --bg: #0b1220;
-      --surface: #0f172a;     /* main panel */
-      --surface2: #0c1426;    /* card */
-      --line: rgba(255,255,255,.12);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --muted2: rgba(255,255,255,.60);
-      --accent: #7c5cff;
-      --radius: 14px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --text:#111;
+      --muted:#444;
+      --light:#777;
+      --link:#0b57d0;
+      --bg:#ffffff;
+      --line:#e7e7e7;
+      --chip:#f5f5f5;
+      --max:1000px;
     }
-
-    *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: var(--sans);
-      color: var(--text);
-      background: var(--bg);           /* flat, minimal */
-      line-height:1.65;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      background:var(--bg);
+      color:var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.45;
     }
-
-    a{color:inherit; text-decoration:none}
-    a:hover{opacity:.92}
-    a:focus-visible{
-      outline: 2px solid rgba(124,92,255,.75);
-      outline-offset: 2px;
-      border-radius: 10px;
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{
+      width:100%;
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 18px 14px 50px;
     }
-
-    .wrap{
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 22px 16px 64px;
-    }
-
-    /* Layout */
-    .layout{
-      display:grid;
-      grid-template-columns: 310px 1fr;
-      gap:16px;
-      align-items:start;
-    }
-    @media (max-width: 920px){
-      .layout{grid-template-columns: 1fr}
-    }
-
-    /* Panels */
-    .panel{
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: none;
-    }
-    .pad{padding:16px}
-    .pad-lg{padding:16px}
-    .sep{height:1px; background:var(--line); margin:14px 0}
-
-    /* Sidebar */
-    .sidebar{
-      position: sticky;
-      top: 16px;
-    }
-    @media (max-width: 920px){
-      .sidebar{position:static}
-    }
-
     .name{
-      font-size: 22px;
-      margin: 0 0 6px;
+      font-size: 34px;
+      font-weight: 700;
       letter-spacing: .2px;
+      margin: 0;
     }
-    .role{
-      margin:0;
-      color: var(--muted);
-      font-size: 13.5px;
+    .small{
+      color:var(--muted);
+      font-size: 15.5px;
     }
-    .tagline{
-      margin:10px 0 0;
-      color: var(--muted2);
-      font-size: 13.5px;
+    h2{
+      font-size: 20px;
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
     }
-
-    .pillbar{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .pill{
-      font-size:12px;
-      padding:5px 9px;
-      border-radius:999px;
+    h1.section{
+      font-size: 24px;
+      margin: 30px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    .toplinks{
+      text-align:center;
+      margin-top: 10px;
+      font-size: 15.5px;
+    }
+    .toplinks a{margin:0 6px}
+    .chip{
+      display:inline-block;
+      background: var(--chip);
       border:1px solid var(--line);
-      background: transparent;
-      color: rgba(255,255,255,.84);
+      border-radius:999px;
+      padding: 2px 10px;
+      margin: 3px 4px 0 0;
+      font-size: 13px;
+      color: #222;
       white-space:nowrap;
     }
-
-    .btnrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: transparent;
-      font-weight: 600;
-      font-size: 13px;
+    .row{
+      border-top:1px solid var(--line);
+      padding-top: 14px;
+      margin-top: 14px;
     }
-    .btn.primary{
-      border-color: rgba(124,92,255,.55);
-      background: rgba(124,92,255,.12);
-      color: var(--text);
+    .paperTitle{
+      font-weight: 700;
+      font-size: 16.5px;
+      margin: 0 0 4px;
     }
-
-    .nav{
-      display:grid;
-      gap:6px;
-      margin-top:12px;
-      font-size:14px;
+    .venue{
       color: var(--muted);
-    }
-    .nav a{
-      padding:8px 10px;
-      border-radius: 12px;
-    }
-    .nav a:hover{
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-    }
-
-    /* Main */
-    h2{
-      margin:0 0 10px;
-      font-size: 15px;
-      letter-spacing: .2px;
-    }
-    p{margin:0 0 10px; color: var(--muted)}
-
-    .hero{
-      padding:16px;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      background: var(--surface);
-      box-shadow: none;
-    }
-    .hero h1{
-      margin:0 0 10px;
-      font-size: 26px;
-      line-height:1.2;
-      color: var(--text);
-    }
-    .hero .sub{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 920px){
-      .grid{grid-template-columns: 1fr}
-    }
-
-    .card{
-      padding:14px;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      background: var(--surface2);
-    }
-    .card h3{
-      margin:0 0 6px;
+      margin: 0 0 6px;
       font-size: 14.5px;
-      color: var(--text);
     }
-    .meta{
-      font-size: 12.5px;
-      color: var(--muted2);
-      margin-bottom: 8px;
-    }
-
-    .bullets{
-      margin: 8px 0 0;
-      padding-left: 18px;
+    .authors{
       color: var(--muted);
-      font-size: 13.5px;
+      margin: 0 0 10px;
+      font-size: 14.5px;
     }
-    .bullets li{margin:6px 0}
+    .links a{
+      font-size: 14.5px;
+      margin-right: 8px;
+    }
+    ul.news{
+      margin: 8px 0 0 22px;
+      padding:0;
+      font-size: 15.5px;
+    }
+    ul.news li{margin: 8px 0}
+    .muted{color:var(--muted)}
+    .light{color:var(--light)}
+    .right{ text-align:right; font-size: 12.5px; color: var(--light); }
 
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:10px;
+    /* Make it readable on mobile */
+    @media (max-width: 860px){
+      .name{font-size: 28px}
+      table.profile td{display:block; width:100% !important}
+      td.photo{padding-top: 12px !important}
+      .toplinks{font-size: 15px}
     }
-    .chiplink{
-      font-size:12.5px;
-      padding:5px 9px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: transparent;
-      color: rgba(255,255,255,.86);
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
+    img.round{
+      border-radius: 50%;
+      object-fit: cover;
     }
-
-    /* Make "TODO" chips feel disabled */
-    .chiplink.todo{
-      opacity: .60;
-      cursor: default;
-      pointer-events: none;
+    video{
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background:#000;
     }
-
-    .news{
-      display:grid;
-      gap:10px;
-      margin-top: 6px;
-    }
-    .newsitem{
-      padding:12px 14px;
-      border-radius: 12px;
-      border:1px solid var(--line);
-      background: var(--surface2);
-    }
-    .newsitem b{color: var(--text)}
-    .newsitem .date{
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted2);
-      margin-right:8px;
-    }
-
-    .pub{
-      display:grid;
-      gap:10px;
-      margin-top: 8px;
-    }
-    .pubitem{
-      padding:12px 14px;
-      border-radius: 12px;
-      border:1px solid var(--line);
-      background: var(--surface2);
-    }
-    .pubtitle{margin:0 0 4px; color: var(--text); font-weight:700}
-    .pubmeta{margin:0; color: var(--muted); font-size: 13px}
-
-    .kbd{
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 2px 6px;
-      border-radius: 8px;
-      border:1px solid var(--line);
-      background: transparent;
-      color: rgba(255,255,255,.9);
-    }
-
-    footer{
-      margin-top:16px;
-      color: var(--muted2);
-      font-size: 12.5px;
-      text-align:center;
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
+    img.media{
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      object-fit: cover;
+      background:#f7f7f7;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="layout">
+  <div class="container">
 
-      <!-- SIDEBAR -->
-      <aside class="panel sidebar">
-        <div class="pad-lg">
-          <h1 class="name">Harish BM</h1>
-          <p class="role">Robotics Engineer / Research Associate (Multi-Agent Systems)</p>
-          <p class="tagline">
-            Multi-agent motion planning • Estimation & control • Real robot deployments (TurtleBot3/4).
+    <!-- TOP PROFILE (like Nike353) -->
+    <table class="profile" style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
+      <tr>
+        <!-- Left: intro -->
+        <td style="padding: 10px 14px; width:63%; vertical-align:middle;">
+          <p class="name" style="text-align:center;">Harish Bhamitipadi Magesh</p>
+
+          <p class="small">
+            I’m a Robotics Research Associate at <a href="https://www.iitm.ac.in/" target="_blank" rel="noreferrer">IIT Madras</a> working on multi-agent systems, estimation, motion planning, and real robot deployments.
+            I previously interned at <a href="https://www.cmu.edu/" target="_blank" rel="noreferrer">Carnegie Mellon University</a> (Biorobotics Lab), where I helped bring up and stabilize a multi-robot TurtleBot4 stack and ran repeatable experiments.
           </p>
 
-          <div class="pillbar">
-            <span class="pill">Multi-agent systems</span>
-            <span class="pill">Motion planning</span>
-            <span class="pill">Game-theoretic robotics</span>
-            <span class="pill">EKF fusion</span>
-            <span class="pill">ROS2</span>
-            <span class="pill">Real robots</span>
-          </div>
-
-          <div class="btnrow">
-            <a class="btn primary" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/harish-bhamitipadi-magesh" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="mailto:harishbm2112@gmail.com">Email</a>
-            <a class="btn" href="./assets/Harish_BM_CV.pdf" target="_blank" rel="noreferrer">CV</a>
-          </div>
-
-          <div class="sep"></div>
-
-          <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#featured">Featured Work</a>
-            <a href="#news">News</a>
-            <a href="#publications">Publications</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-          </nav>
-
-          <div class="sep"></div>
-
-          <p class="tagline">
-            Proof-first portfolio: code, PDFs, logs, and demos for reproducible results.
+          <p class="small">
+            My work is “deployment-first”: I care about coordination and decision-making that survives sensing noise, timing mismatch, and safety constraints—especially in multi-robot scenarios.
           </p>
-        </div>
-      </aside>
 
-      <!-- MAIN -->
-      <main>
-        <section class="hero">
-          <h1>Building robot teams that don’t fall apart in the real world.</h1>
-          <p class="sub">
-            I work on multi-robot coordination under uncertainty—where timing mismatch, sensing noise,
-            and safety constraints turn “good strategies” into brittle deployments. I care about theory that survives hardware.
+          <p style="margin: 10px 0 0;">
+            <span class="chip">Multi-agent robotics</span>
+            <span class="chip">Motion planning</span>
+            <span class="chip">EKF / sensor fusion</span>
+            <span class="chip">ROS2</span>
+            <span class="chip">TurtleBot3/4</span>
+            <span class="chip">Game theory</span>
           </p>
-        </section>
 
-        <section id="about" class="panel" style="margin-top:16px;">
-          <div class="pad-lg">
-            <h2>About</h2>
-            <p>
-              I’m Harish Bhamitipadi Magesh (Harish BM), a Robotics Research Associate working on multi-agent systems,
-              motion planning, estimation, and control — with an emphasis on real deployments and reproducible experiments.
-            </p>
-            <p>
-              I’ve built and stabilized multi-robot pipelines on TurtleBot fleets: synchronized communication, repeatable SLAM + navigation,
-              and experiment logging. My recent work focuses on game-theoretic multi-agent interactions (Attacker–Target–Defender),
-              and on closing the gap between interaction models and what real robots actually do under imperfect sensing/actuation.
-            </p>
-            <p class="meta">
-              Current: Game Theory & Multi-Agent Systems Lab, IIT Madras (Research Associate). <br/>
-              Previous: Biorobotics Lab, Carnegie Mellon University (Research Intern); Mechatronics Lab, SASTRA University.
-            </p>
+          <div class="toplinks">
+            <a href="mailto:harishbm2112@gmail.com">Email</a> /
+            <a href="data/Harish_BM_CV.pdf">CV</a> /
+            <a href="https://www.linkedin.com/in/harish-bhamitipadi-magesh" target="_blank" rel="noreferrer">LinkedIn</a> /
+            <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-        </section>
+        </td>
 
-        <section id="featured" style="margin-top:16px;">
-          <div class="grid">
-            <div class="card">
-              <h3>Multi-Robot Deployment for Search & Rescue (TurtleBot4 × 4)</h3>
-              <div class="meta">Multi-robot SLAM + Nav • Time sync & comms • Repeatable experiments</div>
-              <ul class="bullets">
-                <li>Brought up a 4-robot system and stabilized the experimental stack by fixing synchronization + communication issues.</li>
-                <li>Enabled repeatable multi-robot SLAM and navigation runs; emphasized logging and debugging for reliability.</li>
-                <li>Explored coordination baselines: multi-agent ergodic search, multi-robot routing (TSP/MTSP-style), pursuit–evasion behaviors.</li>
-              </ul>
-              <div class="links">
-                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">GitHub (projects)</a>
-                <span class="chiplink todo">Demo (coming soon)</span>
-                <span class="chiplink todo">Write-up (coming soon)</span>
-              </div>
-            </div>
+        <!-- Right: photo -->
+        <td class="photo" style="padding: 10px 14px; width:37%; vertical-align:middle; text-align:center;">
+          <!-- Put your image at /images/profile.jpg (or change path) -->
+          <a href="images/profile.jpg">
+            <img class="round" src="images/profile.jpg" alt="profile photo" style="width: 240px; height: 240px; max-width: 100%;">
+          </a>
+        </td>
+      </tr>
+    </table>
 
-            <div class="card">
-              <h3>EKF Fusion: Odom + Beacon Localization (Marvelmind)</h3>
-              <div class="meta">EKF • Outlier rejection • Frame alignment • Real data</div>
-              <ul class="bullets">
-                <li>Fused wheel odometry with external beacon measurements to align robots into a common global frame.</li>
-                <li>Built practical guards for deployment: jump/teleport rejection, DC-shift alignment, and consistent frame transforms.</li>
-                <li>Focused on measurable behavior: trace/covariance sanity checks, error vs. ground truth proxies, and stable plots/logs.</li>
-              </ul>
-              <div class="links">
-                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
-                <span class="chiplink todo">Logs/Dataset (coming soon)</span>
-              </div>
-            </div>
+    <!-- RESEARCH INTERESTS -->
+    <h2>Research Interests</h2>
+    <p class="small">
+      My goal is to build reliable multi-robot autonomy under uncertainty. I’m particularly interested in
+      <b>multi-agent motion planning</b> (task allocation, MAPF/CBS-style coordination),
+      <b>estimation</b> (EKF fusion, frame alignment, outlier rejection),
+      and <b>game-theoretic robotics</b> (Attacker–Target–Defender interactions).
+      I care about methods that remain stable when deployed on real robots with imperfect sensing and actuation.
+    </p>
 
-            <div class="card">
-              <h3>MTSP → A* / Dijkstra → CBS Coordination Pipeline</h3>
-              <div class="meta">Task allocation • Path planning • Conflict-based coordination</div>
-              <ul class="bullets">
-                <li>Allocated discrete waypoints across robots (MTSP-style), optimized visit sequences, and planned obstacle-free paths.</li>
-                <li>Implemented search baselines (A*, Dijkstra, greedy) and used CBS-style constraints to resolve inter-robot conflicts.</li>
-                <li>Used the pipeline to build intuition for planning under interaction constraints and limited information.</li>
-              </ul>
-              <div class="links">
-                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
-                <span class="chiplink todo">Results (coming soon)</span>
-              </div>
-            </div>
+    <!-- NEWS -->
+    <h1 class="section">News</h1>
+    <ul class="news">
+      <li><b>Dec 2025</b>: Presented first-author work at <b>Indian Control Conference (ICC)</b> — “Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions.”</li>
+      <li><b>Nov 2024</b>: Joined <b>IIT Madras</b> as a Research Associate (Game Theory & Multi-Agent Systems Lab).</li>
+      <li><b>Mar–Aug 2024</b>: Research internship at <b>CMU Biorobotics Lab</b> — deployed and stabilized a TurtleBot4 multi-robot system.</li>
+      <li><b>2024</b>: Awarded <b>Desh Videsh Research Scholarship</b>.</li>
+    </ul>
 
-            <div class="card">
-              <h3>Game-Theoretic Multi-Agent Interactions (ATAD Differential Game)</h3>
-              <div class="meta">Attacker–Target–Defender • Feedback linearization • Experimental logging</div>
-              <ul class="bullets">
-                <li>Implemented and evaluated a multi-robot TurtleBot3 testbed to study ATAD-style interaction dynamics.</li>
-                <li>Built logging pipelines for reference vs actual trajectories and control commands to quantify tracking error.</li>
-                <li>Studied how sensing/actuation imperfections shift outcomes from idealized continuous-time formulations.</li>
-              </ul>
-              <div class="links">
-                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
-                <a class="chiplink" href="#publications">Paper</a>
-              </div>
-            </div>
+    <!-- PUBLICATIONS -->
+    <h1 class="section">Publications</h1>
+
+    <!-- Publication item (LEFT media, RIGHT text) -->
+    <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <!-- Use a thumbnail OR a short mp4 loop like Nike353 -->
+          <!-- Put your file at /images/icc_atad.mp4 or change to an image -->
+          <video width="100%" muted autoplay loop playsinline>
+            <source src="images/icc_atad.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions</p>
+          <p class="venue">Indian Control Conference (ICC), 2025</p>
+          <p class="authors"><b>Harish B.M.</b>, Co-authors (update names)</p>
+          <div class="links">
+            <a href="#" title="Add PDF link">[PDF]</a>
+            <a href="#" title="Add code link">[Code]</a>
+            <a href="#" title="Add talk/demo link">[Video]</a>
           </div>
-        </section>
+          <p class="small light" style="margin-top:8px;">
+            Short one-liner: differential game formulation + experimental evaluation on TurtleBot testbed under real-world uncertainty.
+          </p>
+        </td>
+      </tr>
+    </table>
 
-        <section id="news" class="panel" style="margin-top:16px;">
-          <div class="pad-lg">
-            <h2>News</h2>
-            <div class="news">
-              <!-- Made date format consistent: Mon YYYY -->
-              <div class="newsitem"><span class="date">Dec 2025</span><b>Presented first-author work</b> — “Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions” at Indian Control Conference (IISc Bengaluru).</div>
-              <div class="newsitem"><span class="date">Nov 2024</span><b>Joined IIT Madras</b> — Research Associate (Game Theory & Multi-Agent Systems Lab): multi-robot testbed + experimental evaluation.</div>
-              <div class="newsitem"><span class="date">Mar–Aug 2024</span><b>Research internship at CMU</b> — Biorobotics Lab: deployed & stabilized TurtleBot4 multi-robot stack; explored coordination baselines.</div>
-              <div class="newsitem"><span class="date">2024</span><b>Desh Videsh Research Scholarship</b> — supported study-abroad research exposure and deployment work.</div>
-            </div>
+    <!-- PREPRINTS -->
+    <h1 class="section">Pre-prints</h1>
+    <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <img class="media" src="images/preprint_placeholder.jpg" alt="preprint thumbnail" style="width:100%; height:180px;">
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">Extended journal submission (in preparation)</p>
+          <p class="authors">Expanded experimental validation + analysis of ATAD interactions under uncertainty.</p>
+          <div class="links">
+            <a href="#" title="Add preprint link">[Preprint]</a>
           </div>
-        </section>
+        </td>
+      </tr>
+    </table>
 
-        <section id="publications" class="panel" style="margin-top:16px;">
-          <div class="pad-lg">
-            <h2>Publications</h2>
-            <p>Keep it strict: title, venue, year, links.</p>
+    <!-- PROJECTS -->
+    <h1 class="section">Projects</h1>
 
-            <div class="pub">
-              <div class="pubitem">
-                <div class="pubtitle">Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions</div>
-                <p class="pubmeta">
-                  Indian Control Conference (ICC), 2025 • Authors: Harish B.M. et al.
-                  <span class="chiplink todo">PDF (coming soon)</span>
-                  <span class="chiplink todo">Code (coming soon)</span>
-                </p>
-              </div>
-
-              <div class="pubitem">
-                <div class="pubtitle">Extended journal submission (in preparation)</div>
-                <p class="pubmeta">
-                  Expanded experimental validation + analysis of multi-robot ATAD interactions under real-world uncertainty.
-                  <span class="chiplink todo">Preprint (coming soon)</span>
-                </p>
-              </div>
-            </div>
-
-            <p class="pubmeta" style="margin-top:10px;">
-              Optional later: add a <span class="kbd">BibTeX</span> button for each publication.
-            </p>
+    <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <video width="100%" muted autoplay loop playsinline>
+            <source src="images/tb4_multirobot.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">Multi-Robot Deployment for Search & Rescue (TurtleBot4 × 4)</p>
+          <p class="venue">ROS2 • SLAM + Navigation • Time sync & comms • Repeatable experiments</p>
+          <p class="small">
+            Built and stabilized a multi-robot pipeline; enabled repeatable multi-robot SLAM and navigation runs; emphasized logging, debugging, and reliability.
+          </p>
+          <div class="links">
+            <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">[Code]</a>
+            <a href="#" title="Add demo link">[Demo]</a>
+            <a href="#" title="Add write-up link">[Write-up]</a>
           </div>
-        </section>
+        </td>
+      </tr>
 
-        <section id="projects" class="panel" style="margin-top:16px;">
-          <div class="pad-lg">
-            <h2>Projects (additional)</h2>
-            <p>Smaller items: course projects, utilities, demos, write-ups. Add real links as you publish them.</p>
-
-            <ul class="bullets">
-              <li><b>Autonomous Navigation for Tugger AGVs (ROS2 + Gazebo)</b> — autonomy stack (mapping, localization, planning) with robustness-focused tuning.</li>
-              <li><b>Feedback Linearization for Differential-Drive Robot</b> — trajectory tracking study with logging and error analysis.</li>
-              <li><b>Multi-robot odometry + localization analysis</b> — encoder noise characterization, drift studies, and alignment strategies.</li>
-              <li><b>Utilities & workflows</b> — ROS2 tooling, logging scripts, and documentation templates for reproducible experiments.</li>
-            </ul>
-
-            <div class="links">
-              <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Browse repos on GitHub</a>
-              <span class="chiplink todo">Project Index (coming soon)</span>
-            </div>
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <img class="media" src="images/ekf_marvelmind.jpg" alt="ekf fusion thumbnail" style="width:100%; height:180px;">
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">EKF Fusion: Odom + Beacon Localization (Marvelmind)</p>
+          <p class="venue">EKF • Outlier rejection • Frame alignment • Real data</p>
+          <p class="small">
+            Fused wheel odometry with beacon measurements to align robots in a common global frame; added practical guards for deployment (teleport rejection, DC-shift alignment).
+          </p>
+          <div class="links">
+            <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">[Code]</a>
+            <a href="#" title="Add logs link">[Logs]</a>
           </div>
-        </section>
+        </td>
+      </tr>
 
-        <section id="skills" class="panel" style="margin-top:16px;">
-          <div class="pad-lg">
-            <h2>Skills</h2>
-            <div class="grid">
-              <div class="card">
-                <h3>Robotics</h3>
-                <ul class="bullets">
-                  <li><b>Localization & Estimation:</b> EKF fusion, frame alignment, outlier rejection, drift analysis</li>
-                  <li><b>Planning:</b> A*, Dijkstra, greedy search; MTSP-style allocation; CBS-style coordination</li>
-                  <li><b>Control:</b> PID, trajectory tracking, feedback linearization (differential-drive)</li>
-                  <li><b>Multi-robot systems:</b> synchronized deployments, repeatable experimental pipelines, logging + evaluation</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h3>Tools & Tech</h3>
-                <ul class="bullets">
-                  <li><b>Languages:</b> Python, MATLAB, C++</li>
-                  <li><b>Robotics:</b> ROS/ROS2, Nav2, SLAM tooling, Gazebo</li>
-                  <li><b>Dev:</b> Linux/Ubuntu, Git, Markdown/LaTeX, NumPy</li>
-                  <li><b>Hardware:</b> TurtleBot3/4, Raspberry Pi, Marvelmind beacons</li>
-                </ul>
-              </div>
-            </div>
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <img class="media" src="images/mtsp_cbs.jpg" alt="mtsp cbs thumbnail" style="width:100%; height:180px;">
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">MTSP → A* / Dijkstra → CBS Coordination Pipeline</p>
+          <p class="venue">Task allocation • Path planning • Conflict-based coordination</p>
+          <p class="small">
+            Allocated discrete waypoints across robots (MTSP-style), optimized visit sequences, planned obstacle-free paths, and resolved conflicts with CBS-style constraints.
+          </p>
+          <div class="links">
+            <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">[Code]</a>
+            <a href="#" title="Add results link">[Results]</a>
           </div>
-        </section>
+        </td>
+      </tr>
+    </table>
 
-        <section id="contact" class="panel" style="margin-top:16px;">
-          <div class="pad-lg">
-            <h2>Contact</h2>
-            <p>Email is best. If you want collaboration, say what you’re currently looking for.</p>
-
-            <ul class="bullets">
-              <li>Email: <a href="mailto:harishbm2112@gmail.com">harishbm2112@gmail.com</a></li>
-              <li>GitHub: <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">HBMatic</a></li>
-              <li>LinkedIn: <a href="https://www.linkedin.com/in/harish-bhamitipadi-magesh" target="_blank" rel="noreferrer">harish-bhamitipadi-magesh</a></li>
-              <li class="meta">Open to: thesis-oriented MS research, multi-robot autonomy, planning/control/estimation.</li>
-            </ul>
+    <!-- COURSE PROJECTS (optional) -->
+    <h1 class="section">Course Projects</h1>
+    <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <img class="media" src="images/course_project.jpg" alt="course project thumbnail" style="width:100%; height:180px;">
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">Swing-up and stabilization of inverted pendulum</p>
+          <p class="venue"><i>EE6415 — Non-Linear System Analysis</i></p>
+          <p class="small">
+            Energy-based swing-up via Lyapunov-style control, followed by stabilization (e.g., pole placement/LQR).
+          </p>
+          <div class="links">
+            <a href="#" title="Add report link">[Report]</a>
+            <a href="#" title="Add video link">[Video]</a>
+            <a href="#" title="Add GitHub link">[GitHub]</a>
           </div>
-        </section>
+        </td>
+      </tr>
+    </table>
 
-        <footer>
-          <div class="sep"></div>
-          © <span id="y"></span> Harish BM • Hosted on GitHub Pages
-        </footer>
-      </main>
+    <!-- SERVICES -->
+    <h1 class="section">Services</h1>
+    <ul class="news">
+      <li>Reviewer: (add if applicable) IEEE conferences/journals, workshops, etc.</li>
+      <li>Teaching Assistant: (if applicable) course name(s), year.</li>
+    </ul>
+
+    <div style="margin-top:26px;">
+      <p class="right">
+        Minimal academic-style template (table layout). You can add: “Template inspired by jonbarron.info” if you want.
+      </p>
     </div>
-  </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  </div>
 </body>
 </html>
