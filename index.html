@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Harish BM — Robotics Portfolio</title>
-  <meta name="description" content="Harish Bhamitipadi Magesh (Harish BM) — Multi-agent robotics, motion planning, localization, control, real deployments." />
+  <meta name="description" content="Harish Bhamitipadi Magesh (Harish BM) — Multi-agent robotics, motion planning, estimation & control, real deployments on TurtleBots." />
   <meta name="color-scheme" content="dark light">
 
   <style>
@@ -265,23 +265,25 @@
       <aside class="panel sidebar">
         <div class="pad-lg">
           <h1 class="name">Harish BM</h1>
-          <p class="role">Robotics Engineer / Researcher</p>
+          <p class="role">Robotics Engineer / Research Associate (Multi-Agent Systems)</p>
           <p class="tagline">
-            Multi-agent motion planning • Localization & control • Real robot deployments.
+            Multi-agent motion planning • Estimation & control • Real robot deployments (TurtleBot3/4).
           </p>
 
           <div class="pillbar">
             <span class="pill">Multi-agent systems</span>
             <span class="pill">Motion planning</span>
+            <span class="pill">Game-theoretic robotics</span>
             <span class="pill">EKF fusion</span>
+            <span class="pill">ROS2</span>
             <span class="pill">Real robots</span>
           </div>
 
           <div class="btnrow">
-            <!-- TODO: Replace with your real links -->
-            <a class="btn primary" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="mailto:YOUR_EMAIL">Email</a>
+            <a class="btn primary" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/harish-bhamitipadi-magesh" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="mailto:harishbm2112@gmail.com">Email</a>
+            <!-- Put your CV PDF at /assets/Harish_BM_CV.pdf -->
             <a class="btn" href="./assets/Harish_BM_CV.pdf" target="_blank" rel="noreferrer">CV</a>
           </div>
 
@@ -300,7 +302,7 @@
           <div class="sep"></div>
 
           <p class="tagline">
-            Tip: keep this page “proof-first”: link code, PDFs, and demos.
+            Proof-first portfolio: link code, PDFs, logs, and demos. “Works once” isn’t a result.
           </p>
         </div>
       </aside>
@@ -310,8 +312,8 @@
         <section class="hero">
           <h1>Building robot teams that don’t fall apart in the real world.</h1>
           <p class="sub">
-            My work focuses on coordination, estimation, and planning for multi-robot systems under
-            sensing noise, timing mismatch, and safety constraints. I care about theory that survives deployment.
+            I work on multi-robot coordination under uncertainty—where timing mismatch, sensing noise,
+            and safety constraints turn “good strategies” into brittle deployments. I care about theory that survives hardware.
           </p>
         </section>
 
@@ -319,15 +321,17 @@
           <div class="pad-lg">
             <h2>About</h2>
             <p>
-              I’m Harish Bhamitipadi Magesh (Harish BM). I work on multi-robot coordination and deployment,
-              with hands-on experience across planning, localization, and control — from simulation to real platforms.
+              I’m Harish Bhamitipadi Magesh (Harish BM), a Robotics Research Associate working on multi-agent systems,
+              motion planning, estimation, and control — with an emphasis on real deployments and reproducible experiments.
             </p>
             <p>
-              I’ve built multi-robot pipelines using <span class="kbd">ROS2</span> and implemented estimation (EKF fusion),
-              planning (A*, MTSP-style task allocation), and collision-avoidance (CBS-style coordination).
+              I’ve built and stabilized multi-robot pipelines on TurtleBot fleets: synchronized communication, repeatable SLAM + navigation,
+              and experiment logging. My recent work focuses on game-theoretic multi-agent interactions (Attacker–Target–Defender),
+              and on closing the gap between interaction models and what real robots actually do under imperfect sensing/actuation.
             </p>
             <p class="meta">
-              Affiliations to mention here (edit): IIT Madras / CMU internship / labs.
+              Current: Game Theory & Multi-Agent Systems Lab, IIT Madras (Research Associate). <br/>
+              Previous: Biorobotics Lab, Carnegie Mellon University (Research Intern); Mechatronics Lab, SASTRA University.
             </p>
           </div>
         </section>
@@ -335,55 +339,60 @@
         <section id="featured" style="margin-top:16px;">
           <div class="grid">
             <div class="card">
-              <h3>Multi-Robot Deployment for Search & Rescue</h3>
-              <div class="meta">Multi-robot stack • Mapping/Localization/Navigation • Coordination</div>
+              <h3>Multi-Robot Deployment for Search & Rescue (TurtleBot4 × 4)</h3>
+              <div class="meta">Multi-robot SLAM + Nav • Time sync & comms • Repeatable experiments</div>
               <ul class="bullets">
-                <li>Deployed and validated a multi-robot workflow (teleop → map → nav).</li>
-                <li>Emphasis on reliability: logging, debugging, and repeatable experiments.</li>
+                <li>Brought up a 4-robot system and stabilized the experimental stack by fixing synchronization + communication issues.</li>
+                <li>Enabled repeatable multi-robot SLAM and navigation runs; emphasized logging and debugging for reliability.</li>
+                <li>Explored coordination baselines: multi-agent ergodic search, multi-robot routing (TSP/MTSP-style), pursuit–evasion behaviors.</li>
               </ul>
               <div class="links">
-                <a class="chiplink" href="https://github.com/YOUR_GITHUB_USERNAME/REPO1" target="_blank" rel="noreferrer">Code</a>
-                <a class="chiplink" href="https://youtu.be/YOUR_DEMO" target="_blank" rel="noreferrer">Demo</a>
-                <a class="chiplink" href="https://github.com/YOUR_GITHUB_USERNAME/REPO1#readme" target="_blank" rel="noreferrer">Write-up</a>
+                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">GitHub (projects)</a>
+                <!-- Add specific repo/demo links when ready -->
+                <span class="chiplink" title="Add a video demo link later">Demo (TODO)</span>
+                <span class="chiplink" title="Add a write-up/PDF link later">Write-up (TODO)</span>
               </div>
             </div>
 
             <div class="card">
-              <h3>EKF Fusion: Odom + Beacon Localization</h3>
-              <div class="meta">EKF • Outlier rejection • Frame alignment • Real data</div>
+              <h3>EKF Fusion: Odom + Beacon Localization (Marvelmind)</h3>
+              <div class="meta">EKF • Teleport/outlier rejection • Frame alignment • Real data</div>
               <ul class="bullets">
-                <li>Fused wheel odometry with external beacon measurements for global tracking.</li>
-                <li>Handled drift + “teleport” outliers and DC shifts using consistent frame alignment.</li>
+                <li>Fused wheel odometry with external beacon measurements to align robots into a common global frame.</li>
+                <li>Built practical guards for deployment: jump/teleport rejection, DC-shift alignment, and consistent frame transforms.</li>
+                <li>Focused on measurable behavior: trace/covariance sanity checks, error vs. ground truth proxies, and stable plots/logs.</li>
               </ul>
               <div class="links">
-                <a class="chiplink" href="https://github.com/YOUR_GITHUB_USERNAME/REPO2" target="_blank" rel="noreferrer">Code</a>
-                <a class="chiplink" href="https://github.com/YOUR_GITHUB_USERNAME/REPO2/releases" target="_blank" rel="noreferrer">Dataset/Logs</a>
+                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
+                <span class="chiplink" title="Add logs/dataset link later">Logs/Dataset (TODO)</span>
               </div>
             </div>
 
             <div class="card">
-              <h3>MTSP → A* → CBS Pipeline</h3>
-              <div class="meta">Task allocation • Path planning • Multi-agent coordination</div>
+              <h3>MTSP → A* / Dijkstra → CBS Coordination Pipeline</h3>
+              <div class="meta">Task allocation • Path planning • Conflict-based coordination</div>
               <ul class="bullets">
-                <li>Assigned discrete waypoints to robots, optimized visit order, planned obstacle-free paths.</li>
-                <li>Resolved inter-robot conflicts with constraint-based coordination (CBS-style).</li>
+                <li>Allocated discrete waypoints across robots (MTSP-style), optimized visit sequences, and planned obstacle-free paths.</li>
+                <li>Implemented search baselines (A*, Dijkstra, greedy) and used CBS-style constraints to resolve inter-robot conflicts.</li>
+                <li>Used the pipeline to build intuition for planning under interaction constraints and limited information.</li>
               </ul>
               <div class="links">
-                <a class="chiplink" href="https://github.com/YOUR_GITHUB_USERNAME/REPO3" target="_blank" rel="noreferrer">Code</a>
-                <a class="chiplink" href="https://github.com/YOUR_GITHUB_USERNAME/REPO3#results" target="_blank" rel="noreferrer">Results</a>
+                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
+                <span class="chiplink" title="Add results page later">Results (TODO)</span>
               </div>
             </div>
 
             <div class="card">
-              <h3>Game-Theoretic Multi-Agent Scenarios</h3>
-              <div class="meta">Pursuit/Evasion • Differential games • Trajectory tracking</div>
+              <h3>Game-Theoretic Multi-Agent Interactions (ATAD Differential Game)</h3>
+              <div class="meta">Attacker–Target–Defender • Feedback linearization • Experimental logging</div>
               <ul class="bullets">
-                <li>Built simulation + logging for multi-agent interception experiments.</li>
-                <li>Compared numerical strategies to stabilize control magnitudes without breaking dynamics.</li>
+                <li>Implemented and evaluated a multi-robot TurtleBot3 testbed to study ATAD-style interaction dynamics.</li>
+                <li>Built logging pipelines for reference vs actual trajectories and control commands to quantify tracking error.</li>
+                <li>Studied how sensing/actuation imperfections shift outcomes from idealized continuous-time formulations.</li>
               </ul>
               <div class="links">
-                <a class="chiplink" href="https://github.com/YOUR_GITHUB_USERNAME/REPO4" target="_blank" rel="noreferrer">Code</a>
-                <a class="chiplink" href="https://youtu.be/YOUR_TALK" target="_blank" rel="noreferrer">Talk</a>
+                <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Code (GitHub)</a>
+                <a class="chiplink" href="#publications">Paper</a>
               </div>
             </div>
           </div>
@@ -393,10 +402,10 @@
           <div class="pad-lg">
             <h2>News</h2>
             <div class="news">
-              <!-- TODO: Update these with real dates -->
-              <div class="newsitem"><span class="date">2025-XX</span><b>Paper accepted</b> — add venue + title + link.</div>
-              <div class="newsitem"><span class="date">2025-XX</span><b>Deployed multi-robot experiment</b> — add 1-line outcome + link.</div>
-              <div class="newsitem"><span class="date">2024-XX</span><b>Started research role</b> — add lab + focus.</div>
+              <div class="newsitem"><span class="date">2025</span><b>Presented first-author work</b> — “Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions” at Indian Control Conference (IISc Bengaluru).</div>
+              <div class="newsitem"><span class="date">2024-11</span><b>Joined IIT Madras</b> — Research Associate (Game Theory & Multi-Agent Systems Lab): multi-robot testbed + experimental evaluation.</div>
+              <div class="newsitem"><span class="date">2024-03 → 2024-08</span><b>Research internship at CMU</b> — Biorobotics Lab: deployed & stabilized TurtleBot4 multi-robot stack; explored coordination baselines.</div>
+              <div class="newsitem"><span class="date">2024</span><b>Desh Videsh Research Scholarship</b> — supported study-abroad research exposure and deployment work.</div>
             </div>
           </div>
         </section>
@@ -405,17 +414,28 @@
           <div class="pad-lg">
             <h2>Publications</h2>
             <p>
-              Keep this section strict: title, venue, year, links. No fluff.
+              Keep it strict: title, venue, year, links.
             </p>
             <div class="pub">
-              <!-- TODO: Replace with your actual publication(s) -->
               <div class="pubitem">
-                <div class="pubtitle">Paper Title — Multi-Agent / Control</div>
-                <p class="pubmeta">Venue, Year • Authors (you in bold) • <a class="chiplink" href="#">PDF</a> <a class="chiplink" href="#">Code</a></p>
+                <div class="pubtitle">Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions</div>
+                <p class="pubmeta">
+                  Indian Control Conference (ICC), 2025 • Authors: Harish B.M. et al.
+                  <!-- Add links when you have them -->
+                  <span class="chiplink" title="Add PDF link when available">PDF (TODO)</span>
+                  <span class="chiplink" title="Add code link when available">Code (TODO)</span>
+                </p>
+              </div>
+              <div class="pubitem">
+                <div class="pubtitle">Extended journal submission (in preparation)</div>
+                <p class="pubmeta">
+                  Expanded experimental validation + analysis of multi-robot ATAD interactions under real-world uncertainty.
+                  <span class="chiplink" title="Add preprint link when ready">Preprint (TODO)</span>
+                </p>
               </div>
             </div>
             <p class="pubmeta" style="margin-top:10px;">
-              Optional: add a <span class="kbd">BibTeX</span> button later if you want.
+              Optional later: add a <span class="kbd">BibTeX</span> button for each publication.
             </p>
           </div>
         </section>
@@ -424,13 +444,18 @@
           <div class="pad-lg">
             <h2>Projects (additional)</h2>
             <p>
-              Put smaller things here: course projects, utilities, demos, writeups.
+              Smaller items: course projects, utilities, demos, write-ups. Add real links as you publish them.
             </p>
             <ul class="bullets">
-              <li><a href="https://github.com/YOUR_GITHUB_USERNAME/PROJECT_A" target="_blank" rel="noreferrer">Project A</a> — 1-line description.</li>
-              <li><a href="https://github.com/YOUR_GITHUB_USERNAME/PROJECT_B" target="_blank" rel="noreferrer">Project B</a> — 1-line description.</li>
-              <li><a href="https://github.com/YOUR_GITHUB_USERNAME/PROJECT_C" target="_blank" rel="noreferrer">Project C</a> — 1-line description.</li>
+              <li><b>Autonomous Navigation for Tugger AGVs (ROS2 + Gazebo)</b> — full autonomy stack (mapping, localization, planning) with robustness-focused tuning and edge-case handling.</li>
+              <li><b>Feedback Linearization for Differential-Drive Robot</b> — trajectory tracking study in simulation with logging and error analysis.</li>
+              <li><b>Multi-robot odometry + localization analysis</b> — encoder noise characterization, drift studies, and alignment strategies for global-frame consistency.</li>
+              <li><b>Utilities & workflows</b> — ROS2 tooling, logging scripts, documentation templates for reproducible experiments.</li>
             </ul>
+            <div class="links">
+              <a class="chiplink" href="https://github.com/HBMatic" target="_blank" rel="noreferrer">Browse repos on GitHub</a>
+              <span class="chiplink" title="Add a consolidated write-up page later">Project Index (TODO)</span>
+            </div>
           </div>
         </section>
 
@@ -441,16 +466,19 @@
               <div class="card">
                 <h3>Robotics</h3>
                 <ul class="bullets">
-                  <li>Localization: EKF, sensor fusion, frame transforms</li>
-                  <li>Planning: A*, graph search, task allocation, CBS-style coordination</li>
-                  <li>Control: trajectory tracking, feedback linearization</li>
+                  <li><b>Localization & Estimation:</b> EKF fusion, frame alignment, outlier rejection, drift analysis</li>
+                  <li><b>Planning:</b> A*, Dijkstra, greedy search; MTSP-style allocation; CBS-style coordination</li>
+                  <li><b>Control:</b> PID, trajectory tracking, feedback linearization (differential-drive)</li>
+                  <li><b>Multi-robot systems:</b> synchronized deployments, repeatable experimental pipelines, logging + evaluation</li>
                 </ul>
               </div>
               <div class="card">
-                <h3>Tools</h3>
+                <h3>Tools & Tech</h3>
                 <ul class="bullets">
-                  <li>ROS2, Python, MATLAB, Linux, Git</li>
-                  <li>Simulation: Gazebo / CoppeliaSim (add specifics)</li>
+                  <li><b>Languages:</b> Python, MATLAB, C++</li>
+                  <li><b>Robotics:</b> ROS/ROS2, Nav2, SLAM tooling, Gazebo</li>
+                  <li><b>Dev:</b> Linux/Ubuntu, Git, Markdown/LaTeX, NumPy</li>
+                  <li><b>Hardware:</b> TurtleBot3/4, Raspberry Pi, Marvelmind beacons</li>
                 </ul>
               </div>
             </div>
@@ -461,12 +489,13 @@
           <div class="pad-lg">
             <h2>Contact</h2>
             <p>
-              Email is best. If you want collaboration, add what you’re actively looking for (MS/RA/PhD).
+              Email is best. If you want collaboration, say what you’re currently looking for.
             </p>
             <ul class="bullets">
-              <li>Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></li>
-              <li>GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">YOUR_GITHUB_USERNAME</a></li>
-              <li>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noreferrer">YOUR_LINKEDIN</a></li>
+              <li>Email: <a href="mailto:harishbm2112@gmail.com">harishbm2112@gmail.com</a></li>
+              <li>GitHub: <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">HBMatic</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/harish-bhamitipadi-magesh" target="_blank" rel="noreferrer">harish-bhamitipadi-magesh</a></li>
+              <li class="meta">Open to: thesis-oriented MS research, multi-robot autonomy, planning/control/estimation.</li>
             </ul>
           </div>
         </section>
