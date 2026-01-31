@@ -16,8 +16,8 @@
       --light:#777;
       --link:#0b57d0;
       --bg:#ffffff;
-      --line:#e7e7e7;
-      --chip:#f5f5f5;
+      --line:#e8e8e8;
+      --chip:#f6f6f6;
       --max:1000px;
     }
     html{scroll-behavior:smooth}
@@ -26,15 +26,16 @@
       background:var(--bg);
       color:var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      line-height:1.45;
+      line-height:1.5;
     }
     a{color:var(--link); text-decoration:none}
     a:hover{text-decoration:underline}
+
     .container{
       width:100%;
       max-width: var(--max);
       margin:0 auto;
-      padding: 18px 14px 50px;
+      padding: 18px 14px 60px;
     }
     .name{
       font-size: 34px;
@@ -64,22 +65,32 @@
       font-size: 15.5px;
     }
     .toplinks a{margin:0 6px}
+
     .chip{
       display:inline-block;
       background: var(--chip);
       border:1px solid var(--line);
       border-radius:999px;
       padding: 2px 10px;
-      margin: 3px 4px 0 0;
+      margin: 3px 6px 0 0;
       font-size: 13px;
       color: #222;
       white-space:nowrap;
     }
+
+    ul.news{
+      margin: 8px 0 0 22px;
+      padding:0;
+      font-size: 15.5px;
+    }
+    ul.news li{margin: 8px 0}
+
     .row{
       border-top:1px solid var(--line);
       padding-top: 14px;
       margin-top: 14px;
     }
+
     .paperTitle{
       font-weight: 700;
       font-size: 16.5px;
@@ -92,38 +103,31 @@
     }
     .authors{
       color: var(--muted);
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       font-size: 14.5px;
+    }
+    .desc{
+      color: var(--muted);
+      font-size: 14.8px;
+      margin: 0 0 10px;
     }
     .links a{
       font-size: 14.5px;
       margin-right: 8px;
     }
-    ul.news{
-      margin: 8px 0 0 22px;
-      padding:0;
-      font-size: 15.5px;
-    }
-    ul.news li{margin: 8px 0}
-    .muted{color:var(--muted)}
-    .light{color:var(--light)}
-    .right{ text-align:right; font-size: 12.5px; color: var(--light); }
 
-    /* Make it readable on mobile */
-    @media (max-width: 860px){
-      .name{font-size: 28px}
-      table.profile td{display:block; width:100% !important}
-      td.photo{padding-top: 12px !important}
-      .toplinks{font-size: 15px}
+    .right{
+      text-align:right;
+      font-size: 12.5px;
+      color: var(--light);
+      margin-top: 18px;
     }
+
     img.round{
       border-radius: 50%;
       object-fit: cover;
-    }
-    video{
       border: 1px solid var(--line);
-      border-radius: 10px;
-      background:#000;
+      background:#f7f7f7;
     }
     img.media{
       border: 1px solid var(--line);
@@ -131,26 +135,46 @@
       object-fit: cover;
       background:#f7f7f7;
     }
+    video{
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background:#000;
+    }
+
+    /* Mobile */
+    @media (max-width: 860px){
+      .name{font-size: 28px}
+      table.profile td{display:block; width:100% !important}
+      td.photo{padding-top: 12px !important}
+      .toplinks{font-size: 15px}
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <!-- TOP PROFILE (like Nike353) -->
+    <!-- TOP PROFILE -->
     <table class="profile" style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
       <tr>
-        <!-- Left: intro -->
         <td style="padding: 10px 14px; width:63%; vertical-align:middle;">
           <p class="name" style="text-align:center;">Harish Bhamitipadi Magesh</p>
 
           <p class="small">
-            I’m a Robotics Research Associate at <a href="https://www.iitm.ac.in/" target="_blank" rel="noreferrer">IIT Madras</a> working on multi-agent systems, estimation, motion planning, and real robot deployments.
-            I previously interned at <a href="https://www.cmu.edu/" target="_blank" rel="noreferrer">Carnegie Mellon University</a> (Biorobotics Lab), where I helped bring up and stabilize a multi-robot TurtleBot4 stack and ran repeatable experiments.
+            I’m a Research Associate at <a href="https://www.iitm.ac.in/" target="_blank" rel="noreferrer">IIT Madras</a> (Game Theory Lab),
+            working on multi-agent robotics with an emphasis on <b>real robot deployments</b>, <b>estimation</b>, <b>planning</b>, and
+            <b>game-theoretic interactions</b>.
           </p>
 
           <p class="small">
-            My work is “deployment-first”: I care about coordination and decision-making that survives sensing noise, timing mismatch, and safety constraints—especially in multi-robot scenarios.
+            Previously, I was a research intern at <a href="https://www.cmu.edu/" target="_blank" rel="noreferrer">Carnegie Mellon University</a>
+            (Biorobotics Lab), contributing to a “Multi-Robot Deployment for Search and Rescue” project using four TurtleBot4 robots—
+            from hardware bring-up to repeatable navigation/mapping runs.
+          </p>
+
+          <p class="small">
+            I earned my B.Tech in Electrical and Electronics Engineering from SASTRA (First Class with Distinction; top 10%),
+            and I enjoy building systems that don’t collapse when sensors drift, clocks desync, or reality disagrees with the model.
           </p>
 
           <p style="margin: 10px 0 0;">
@@ -159,7 +183,7 @@
             <span class="chip">EKF / sensor fusion</span>
             <span class="chip">ROS2</span>
             <span class="chip">TurtleBot3/4</span>
-            <span class="chip">Game theory</span>
+            <span class="chip">Differential games</span>
           </p>
 
           <div class="toplinks">
@@ -170,12 +194,14 @@
           </div>
         </td>
 
-        <!-- Right: photo -->
         <td class="photo" style="padding: 10px 14px; width:37%; vertical-align:middle; text-align:center;">
-          <!-- Put your image at /images/profile.jpg (or change path) -->
+          <!-- Put your image at /images/profile.jpg -->
           <a href="images/profile.jpg">
             <img class="round" src="images/profile.jpg" alt="profile photo" style="width: 240px; height: 240px; max-width: 100%;">
           </a>
+          <div class="small" style="margin-top:8px; color:var(--light);">
+            Chennai, India • Open to thesis-oriented MS research
+          </div>
         </td>
       </tr>
     </table>
@@ -183,163 +209,195 @@
     <!-- RESEARCH INTERESTS -->
     <h2>Research Interests</h2>
     <p class="small">
-      My goal is to build reliable multi-robot autonomy under uncertainty. I’m particularly interested in
-      <b>multi-agent motion planning</b> (task allocation, MAPF/CBS-style coordination),
-      <b>estimation</b> (EKF fusion, frame alignment, outlier rejection),
-      and <b>game-theoretic robotics</b> (Attacker–Target–Defender interactions).
-      I care about methods that remain stable when deployed on real robots with imperfect sensing and actuation.
+      My research goal is to develop robust multi-robot autonomy under uncertainty, focusing on:
+      <b>multi-agent coordination</b> (task allocation, MAPF/CBS-style constraints),
+      <b>motion planning</b> (A*, Dijkstra, routing),
+      and <b>estimation</b> (EKF fusion, frame alignment, outlier rejection) to maintain global-frame consistency across robots.
+      I’m also interested in <b>differential games</b> (Attacker–Target–Defender) and how real-world sensing/actuation imperfections shift outcomes.
     </p>
 
     <!-- NEWS -->
     <h1 class="section">News</h1>
     <ul class="news">
-      <li><b>Dec 2025</b>: Presented first-author work at <b>Indian Control Conference (ICC)</b> — “Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions.”</li>
-      <li><b>Nov 2024</b>: Joined <b>IIT Madras</b> as a Research Associate (Game Theory & Multi-Agent Systems Lab).</li>
-      <li><b>Mar–Aug 2024</b>: Research internship at <b>CMU Biorobotics Lab</b> — deployed and stabilized a TurtleBot4 multi-robot system.</li>
-      <li><b>2024</b>: Awarded <b>Desh Videsh Research Scholarship</b>.</li>
+      <li><b>2025</b>: Published and presented “ATAD Differential Game Framework for Multi-Robot Interactions” at <b>Indian Control Conference (ICC)</b>.</li>
+      <li><b>Nov 2024</b>: Joined IIT Madras as a <b>Research Associate</b> (Game Theory Lab).</li>
+      <li><b>Mar–Aug 2024</b>: Research intern at CMU Biorobotics Lab on multi-robot TurtleBot4 deployment.</li>
+      <li><b>2024</b>: Awarded <b>Desh Videsh Research Scholarship</b> (SASTRA) supporting semester abroad at CMU.</li>
     </ul>
 
     <!-- PUBLICATIONS -->
-    <h1 class="section">Publications</h1>
-
-    <!-- Publication item (LEFT media, RIGHT text) -->
+    <h1 class="section">Publications & Presentations</h1>
     <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
       <tr class="row">
         <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
-          <!-- Use a thumbnail OR a short mp4 loop like Nike353 -->
-          <!-- Put your file at /images/icc_atad.mp4 or change to an image -->
+          <!-- Replace with a thumbnail or a looping mp4 -->
+          <img class="media" src="images/atad_thumb.jpg" alt="ATAD thumbnail" style="width:100%; height:180px;">
+          <!-- If you have a video later, replace the image with:
           <video width="100%" muted autoplay loop playsinline>
-            <source src="images/icc_atad.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="images/atad_demo.mp4" type="video/mp4">
           </video>
+          -->
         </td>
         <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
-          <p class="paperTitle">Active Target–Attacker–Defender Differential Game Framework for Multi-Robot Interactions</p>
+          <p class="paperTitle">ATAD Differential Game Framework for Multi-Robot Interactions</p>
           <p class="venue">Indian Control Conference (ICC), 2025</p>
-          <p class="authors"><b>Harish B.M.</b>, Co-authors (update names)</p>
+          <p class="authors"><b>Harish B.M.</b>, V. Reddy, R. Mandal, B. Bhikaji, M. Chetry, S. Thomas</p>
+          <p class="desc">
+            Differential-game framework and experimental evaluation for multi-robot interactions under real-world sensing and actuation imperfections.
+          </p>
           <div class="links">
+            <!-- Add real links when you have them -->
             <a href="#" title="Add PDF link">[PDF]</a>
             <a href="#" title="Add code link">[Code]</a>
-            <a href="#" title="Add talk/demo link">[Video]</a>
+            <a href="#" title="Add talk/video link">[Video]</a>
           </div>
-          <p class="small light" style="margin-top:8px;">
-            Short one-liner: differential game formulation + experimental evaluation on TurtleBot testbed under real-world uncertainty.
-          </p>
         </td>
       </tr>
     </table>
 
-    <!-- PREPRINTS -->
-    <h1 class="section">Pre-prints</h1>
+    <!-- EXPERIENCE -->
+    <h1 class="section">Experience</h1>
+
     <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
       <tr class="row">
         <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
-          <img class="media" src="images/preprint_placeholder.jpg" alt="preprint thumbnail" style="width:100%; height:180px;">
+          <img class="media" src="images/iitm_thumb.jpg" alt="IITM thumbnail" style="width:100%; height:180px;">
         </td>
         <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
-          <p class="paperTitle">Extended journal submission (in preparation)</p>
-          <p class="authors">Expanded experimental validation + analysis of ATAD interactions under uncertainty.</p>
-          <div class="links">
-            <a href="#" title="Add preprint link">[Preprint]</a>
-          </div>
+          <p class="paperTitle">Game Theory Lab, IIT Madras — Research Associate</p>
+          <p class="venue">Nov 2024 – Present • Supervisor: Prof. Puduru Viswanadha Reddy</p>
+          <p class="desc">
+            Designed and deployed a multi-robot TurtleBot3 testbed to study differential-game interactions under real-world sensing and actuation imperfections.
+            Implemented and evaluated controllers for differential-drive robots (PID variants, feedback linearization, model-based control), and analyzed tracking error using logged trajectories and control commands.
+            Integrated Marvelmind localization for improved global-frame consistency, including synchronization and frame alignment between beacon and onboard odometry frames.
+          </p>
+        </td>
+      </tr>
+
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <img class="media" src="images/cmu_thumb.jpg" alt="CMU thumbnail" style="width:100%; height:180px;">
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">Biorobotics Lab, Carnegie Mellon University — Research Intern</p>
+          <p class="venue">Mar 2024 – Aug 2024 • Supervisors: Prof. Howie Choset, Dr. Bhaskar Vundurthy</p>
+          <p class="desc">
+            Contributed to “Multi-Robot Deployment for Search and Rescue” using four TurtleBot4 robots.
+            Established reliable multi-robot communication; resolved SLAM/time synchronization issues impacting repeatable navigation and mapping.
+            Implemented baseline coordination components including multi-agent ergodic search, greedy TSP-based sequencing, and pursuit–evasion behavior variations.
+            Built a base-station workflow for monitoring, command dispatch, and experiment logging across the robot team.
+          </p>
+        </td>
+      </tr>
+
+      <tr class="row">
+        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
+          <img class="media" src="images/sastra_thumb.jpg" alt="SASTRA thumbnail" style="width:100%; height:180px;">
+        </td>
+        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
+          <p class="paperTitle">Mechatronics Lab, SASTRA University — Undergraduate Researcher</p>
+          <p class="venue">Feb 2023 – Aug 2023 • Mentors: Dr. K. Ramkumar, Dr. Badri Narayanan R.</p>
+          <p class="desc">
+            Supported a tow-based AGV project by tuning localization and path-planning parameters through simulation testing under varying environment conditions.
+            Designed and validated a power distribution circuit to stabilize onboard electronics; supported driver control and sensor parameter tuning during integration.
+          </p>
         </td>
       </tr>
     </table>
 
     <!-- PROJECTS -->
-    <h1 class="section">Projects</h1>
+    <h1 class="section">Selected Projects</h1>
 
     <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
       <tr class="row">
         <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
-          <video width="100%" muted autoplay loop playsinline>
-            <source src="images/tb4_multirobot.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <img class="media" src="images/agv_thumb.jpg" alt="AGV thumbnail" style="width:100%; height:180px;">
         </td>
         <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
-          <p class="paperTitle">Multi-Robot Deployment for Search & Rescue (TurtleBot4 × 4)</p>
-          <p class="venue">ROS2 • SLAM + Navigation • Time sync & comms • Repeatable experiments</p>
-          <p class="small">
-            Built and stabilized a multi-robot pipeline; enabled repeatable multi-robot SLAM and navigation runs; emphasized logging, debugging, and reliability.
+          <p class="paperTitle">Autonomous Navigation for Tugger AGVs in Industrial Environments (ROS2)</p>
+          <p class="venue">SASTRA, 2023</p>
+          <p class="desc">
+            Built an autonomy stack for a custom AGV in Gazebo using Cartographer for mapping, AMCL for localization, and Nav2 for planning and obstacle avoidance.
+            Tuned mapping/localization parameters and handled recovery edge cases where localization degraded.
           </p>
           <div class="links">
-            <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">[Code]</a>
-            <a href="#" title="Add demo link">[Demo]</a>
-            <a href="#" title="Add write-up link">[Write-up]</a>
+            <a href="#" title="Add repo link">[Code]</a>
+            <a href="#" title="Add report link">[Report]</a>
           </div>
         </td>
       </tr>
 
       <tr class="row">
         <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
-          <img class="media" src="images/ekf_marvelmind.jpg" alt="ekf fusion thumbnail" style="width:100%; height:180px;">
+          <img class="media" src="images/planning_thumb.jpg" alt="planning thumbnail" style="width:100%; height:180px;">
         </td>
         <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
-          <p class="paperTitle">EKF Fusion: Odom + Beacon Localization (Marvelmind)</p>
-          <p class="venue">EKF • Outlier rejection • Frame alignment • Real data</p>
-          <p class="small">
-            Fused wheel odometry with beacon measurements to align robots in a common global frame; added practical guards for deployment (teleport rejection, DC-shift alignment).
+          <p class="paperTitle">Multi-Agent Planning Pipeline (MTSP → TSP → A*/Dijkstra → CBS)</p>
+          <p class="venue">IITM, 2025</p>
+          <p class="desc">
+            Implemented point-to-point planning baselines (A*, Dijkstra, greedy), MTSP-based waypoint allocation, TSP routing, and CBS-based conflict handling
+            to study coordination under discrete planning and safety constraints.
           </p>
           <div class="links">
-            <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">[Code]</a>
-            <a href="#" title="Add logs link">[Logs]</a>
-          </div>
-        </td>
-      </tr>
-
-      <tr class="row">
-        <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
-          <img class="media" src="images/mtsp_cbs.jpg" alt="mtsp cbs thumbnail" style="width:100%; height:180px;">
-        </td>
-        <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
-          <p class="paperTitle">MTSP → A* / Dijkstra → CBS Coordination Pipeline</p>
-          <p class="venue">Task allocation • Path planning • Conflict-based coordination</p>
-          <p class="small">
-            Allocated discrete waypoints across robots (MTSP-style), optimized visit sequences, planned obstacle-free paths, and resolved conflicts with CBS-style constraints.
-          </p>
-          <div class="links">
-            <a href="https://github.com/HBMatic" target="_blank" rel="noreferrer">[Code]</a>
+            <a href="#" title="Add repo link">[Code]</a>
             <a href="#" title="Add results link">[Results]</a>
           </div>
         </td>
       </tr>
-    </table>
 
-    <!-- COURSE PROJECTS (optional) -->
-    <h1 class="section">Course Projects</h1>
-    <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
       <tr class="row">
         <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
-          <img class="media" src="images/course_project.jpg" alt="course project thumbnail" style="width:100%; height:180px;">
+          <img class="media" src="images/tb3_thumb.jpg" alt="TurtleBot3 thumbnail" style="width:100%; height:180px;">
         </td>
         <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
-          <p class="paperTitle">Swing-up and stabilization of inverted pendulum</p>
-          <p class="venue"><i>EE6415 — Non-Linear System Analysis</i></p>
-          <p class="small">
-            Energy-based swing-up via Lyapunov-style control, followed by stabilization (e.g., pole placement/LQR).
+          <p class="paperTitle">Differential Game Testbed on TurtleBot3 Fleet</p>
+          <p class="venue">IITM, 2025</p>
+          <p class="desc">
+            Built an experiment logging pipeline to record reference vs measured trajectories and control commands under feedback-linearization-based control,
+            enabling tracking-error quantification and failure-mode analysis across repeatable trials.
           </p>
           <div class="links">
-            <a href="#" title="Add report link">[Report]</a>
-            <a href="#" title="Add video link">[Video]</a>
-            <a href="#" title="Add GitHub link">[GitHub]</a>
+            <a href="#" title="Add repo link">[Code]</a>
+            <a href="#" title="Add demo link">[Demo]</a>
           </div>
         </td>
       </tr>
     </table>
 
-    <!-- SERVICES -->
-    <h1 class="section">Services</h1>
+    <!-- TEACHING -->
+    <h1 class="section">Teaching</h1>
     <ul class="news">
-      <li>Reviewer: (add if applicable) IEEE conferences/journals, workshops, etc.</li>
-      <li>Teaching Assistant: (if applicable) course name(s), year.</li>
+      <li><b>Mar–May 2025</b>: Teaching Assistant, <b>EE5419 Advanced Control Lab</b>, IIT Madras — taught ROS/ROS2, Gazebo, and real-robot deployment workflows.</li>
+      <li><b>May–Jul 2025</b>: Supervisor, <b>IIT Madras Summer Fellowship Program</b> — guided 4 students on ROS2/Gazebo workflows and SLAM-oriented localization tasks.</li>
     </ul>
 
-    <div style="margin-top:26px;">
-      <p class="right">
-        Minimal academic-style template (table layout). You can add: “Template inspired by jonbarron.info” if you want.
-      </p>
-    </div>
+    <!-- SKILLS -->
+    <h1 class="section">Skills</h1>
+    <p class="small">
+      <b>Programming:</b> Python, MATLAB, C++<br>
+      <b>Frameworks/Tools:</b> ROS/ROS2, Gazebo, Nav2, Cartographer, AMCL, OpenCV, NumPy, Git, Ubuntu, Simulink, SolidWorks, CoppeliaSim, LaTeX, Markdown<br>
+      <b>Hardware:</b> TurtleBot3/4, Arduino, Raspberry Pi, Marvelmind IPS
+    </p>
+
+    <!-- CERTIFICATIONS -->
+    <h1 class="section">Certifications</h1>
+    <ul class="news">
+      <li>Udacity: Robotics Software Engineer — RTAB-Map, AMCL, A* navigation in simulation.</li>
+      <li>NPTEL: Wheeled Mobile Robotics — Elite (score: 64%).</li>
+      <li>Udemy: Introduction to ROS Basics and Navigation.</li>
+    </ul>
+
+    <!-- SERVICE & LEADERSHIP -->
+    <h1 class="section">Service & Leadership</h1>
+    <ul class="news">
+      <li>Community outreach project lead: digitized soil test data and developed a crop-advisory web tool; organized soil testing and awareness camps.</li>
+      <li>Treasurer, IEEE Student Branch (SASTRA): supported logistics for IEEE APS 2023 conference activities.</li>
+      <li>Team Lead, e-Yantra Robotics Competition: led a 4-member team through design and implementation phases.</li>
+    </ul>
+
+    <p class="right">
+      Minimal academic-style layout. If you want, add a small footer note: “Template inspired by jonbarron.info”.
+    </p>
 
   </div>
 </body>
