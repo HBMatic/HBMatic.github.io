@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Harish Bhamitipadi Magesh — Robotics, Multi-Agent Systems, Motion Planning, Control" />
+  <title>Harish BM | Robotics Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b0f19; --card:#11182a; --muted:#9fb0d0; --text:#e9eefc;
+      --accent:#7c5cff; --accent2:#2ee59d; --line:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+                  radial-gradient(900px 600px at 110% 10%, rgba(46,229,157,.25), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:1024px; margin:0 auto; padding:28px 18px 60px}
+    nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,25,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .navin{max-width:1024px; margin:0 auto; padding:14px 18px; display:flex; gap:16px; align-items:center; justify-content:space-between}
+    .brand{display:flex; gap:10px; align-items:center}
+    .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .links{display:flex; gap:14px; flex-wrap:wrap; font-size:14px; color:var(--muted)}
+    .links a{padding:6px 10px; border-radius:10px}
+    .links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    header{padding:34px 0 18px}
+    .hero{
+      display:grid; grid-template-columns: 1.25fr .75fr; gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h1{margin:0 0 10px; font-size:34px; line-height:1.15}
+    .subtitle{color:var(--muted); margin:0 0 16px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 0}
+    .chip{
+      font-size:12px; color:#dbe5ff;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      font-weight:600; font-size:14px;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(46,229,157,.65));
+      border:none;
+      color:#0b0f19;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    section{padding:18px 0}
+    h2{margin:0 0 10px; font-size:18px}
+    p{margin:0 0 10px; color:var(--muted)}
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
+    .col-6{grid-column: span 6}
+    .col-12{grid-column: span 12}
+    @media (max-width: 860px){ .col-6{grid-column: span 12} }
+    .item h3{margin:0 0 6px; font-size:15px}
+    .meta{font-size:12px; color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+    .sep{height:1px; background:var(--line); margin:16px 0}
+    footer{padding-top:18px; color:var(--muted); font-size:13px}
+    code.inline{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px;
+      background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 8px; border:1px solid var(--line); color:#e9eefc}
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="navin">
+      <div class="brand">
+        <span class="dot"></span>
+        <strong>Harish BM</strong>
+      </div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <div class="card">
+          <h1>Robotics • Multi-Agent Systems • Motion Planning</h1>
+          <p class="subtitle">
+            I build reliable robot teams—planning, control, localization, and deployment—especially for
+            multi-robot coordination and safety-critical scenarios.
+          </p>
+          <div class="cta">
+            <!-- Replace links -->
+            <a class="btn primary" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="mailto:YOUR_EMAIL">Email</a>
+            <a class="btn" href="#cv">Download CV</a>
+          </div>
+          <div class="chips">
+            <span class="chip">ROS2</span>
+            <span class="chip">Python</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">TurtleBot</span>
+            <span class="chip">EKF / Sensor Fusion</span>
+            <span class="chip">A* / CBS</span>
+            <span class="chip">Game Theory</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>At a glance</h2>
+          <p><strong>Focus:</strong> multi-robot coordination, planning + control, localization.</p>
+          <p><strong>Recent work:</strong> multi-agent search & rescue style deployments and multi-defender game setups.</p>
+          <div class="sep"></div>
+          <p class="meta">Quick links (edit):</p>
+          <p>
+            <span class="meta">• Publications:</span> <a href="#research">Research</a><br/>
+            <span class="meta">• Projects:</span> <a href="#projects">Projects</a><br/>
+            <span class="meta">• Resume:</span> <a href="#cv">CV</a>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="card">
+        <h2>About</h2>
+        <p>
+          I’m Harish Bhamitipadi Magesh (Harish BM), a robotics engineer/researcher interested in
+          multi-agent motion planning, estimation, and real-world deployment.
+          I like work that survives contact with reality: noisy sensors, timing mismatch, and safety constraints.
+        </p>
+        <p class="meta">
+          <strong>Currently:</strong> Project Associate / Research Assistant (update with your exact role & lab).<br/>
+          <strong>Looking for:</strong> MS Robotics (Spring/Fall 2026) + research collaborations.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card col-6 item">
+          <h3>Multi-Robot Deployment for Search & Rescue</h3>
+          <div class="meta">ROS2 • TurtleBots • Navigation • Coordination</div>
+          <ul class="list">
+            <li>Built a multi-robot pipeline for mapping/localization/navigation and coordinated task execution.</li>
+            <li>Designed waypoint assignment + route optimization workflows for multiple agents.</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME/REPO1" target="_blank" rel="noreferrer">Code</a>
+            <a class="btn" href="https://youtu.be/YOUR_DEMO" target="_blank" rel="noreferrer">Demo</a>
+          </div>
+        </div>
+
+        <div class="card col-6 item">
+          <h3>EKF Fusion: Odom + Beacon Localization</h3>
+          <div class="meta">MATLAB/Python • EKF • Real robots</div>
+          <ul class="list">
+            <li>Fused wheel odometry with external beacon measurements for robust global tracking.</li>
+            <li>Implemented outlier rejection + consistent frame alignment for multi-robot experiments.</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME/REPO2" target="_blank" rel="noreferrer">Code</a>
+            <a class="btn" href="#contact">Request details</a>
+          </div>
+        </div>
+
+        <div class="card col-6 item">
+          <h3>Multi-Agent Motion Planning: MTSP → A* → CBS</h3>
+          <div class="meta">Optimization • Planning • Collision-free coordination</div>
+          <ul class="list">
+            <li>Task allocation (MTSP) + per-robot sequencing + obstacle-aware path planning.</li>
+            <li>Collision avoidance using conflict-based search (CBS) under static maps.</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME/REPO3" target="_blank" rel="noreferrer">Code</a>
+          </div>
+        </div>
+
+        <div class="card col-6 item">
+          <h3>Game-Theoretic Multi-Defender Scenarios</h3>
+          <div class="meta">Dynamic games • Control • Simulation/Deployment</div>
+          <ul class="list">
+            <li>Implemented multi-agent pursuit/evasion style experiments and logged trajectories & commands.</li>
+            <li>Compared numerical integration strategies to stabilize control magnitudes.</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME/REPO4" target="_blank" rel="noreferrer">Code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research / Publications</h2>
+      <div class="card">
+        <p>Add your publications, preprints, posters, and talks here.</p>
+        <ul class="list">
+          <li><strong>Paper Title</strong> — Conference/Journal, Year. <span class="meta">(links: PDF / DOI / code)</span></li>
+          <li><strong>Paper Title</strong> — Conference/Journal, Year.</li>
+        </ul>
+        <p class="meta">Tip: If you have an arXiv link, put it here. If not, link a PDF in your repo.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card col-6">
+          <h3>Software</h3>
+          <ul class="list">
+            <li>ROS2, Python, MATLAB, C/C++ (edit), Linux</li>
+            <li>Gazebo / CoppeliaSim, Git, Docker (edit)</li>
+          </ul>
+        </div>
+        <div class="card col-6">
+          <h3>Robotics</h3>
+          <ul class="list">
+            <li>Localization: EKF, sensor fusion, frame alignment</li>
+            <li>Planning: A*, graph search, CBS, task allocation</li>
+            <li>Control: feedback linearization, trajectory tracking</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+      <div class="card">
+        <p>
+          Put your resume PDF in the same repository and link it here.
+          Example: <code class="inline">/assets/Harish_BM_CV.pdf</code>
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="./assets/Harish_BM_CV.pdf" target="_blank" rel="noreferrer">Open CV (PDF)</a>
+          <a class="btn" href="./assets/Harish_BM_CV.pdf" download>Download</a>
+        </div>
+        <p class="meta">
+          Make sure the file path matches exactly. Filenames are case-sensitive.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Best ways to reach me:</p>
+        <ul class="list">
+          <li>Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noreferrer">YOUR_LINKEDIN</a></li>
+          <li>GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">YOUR_GITHUB_USERNAME</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="sep"></div>
+      <div>© <span id="y"></span> Harish BM • Built with plain HTML/CSS • Hosted on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
