@@ -141,6 +141,19 @@
       background:#000;
     }
 
+    /* Work-in-progress notice (Option 2) */
+    .notice{
+      background:#fff7cc;
+      border-bottom:1px solid #e6d98a;
+    }
+    .notice .inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 14px;
+      font-size: 14.5px;
+      color:#333;
+    }
+
     /* Mobile */
     @media (max-width: 860px){
       .name{font-size: 28px}
@@ -152,6 +165,13 @@
 </head>
 
 <body>
+  <!-- Work-in-progress banner -->
+  <div class="notice">
+    <div class="inner">
+      <b>Work in progress:</b> This website is currently under construction. Some links and media may be incomplete.
+    </div>
+  </div>
+
   <div class="container">
 
     <!-- TOP PROFILE -->
@@ -230,13 +250,7 @@
     <table style="width:100%; border:0; border-spacing:0; border-collapse:separate;">
       <tr class="row">
         <td style="padding: 10px 14px; width:30%; vertical-align:middle;">
-          <!-- Replace with a thumbnail or a looping mp4 -->
           <img class="media" src="images/atad_thumb.jpg" alt="ATAD thumbnail" style="width:100%; height:180px;">
-          <!-- If you have a video later, replace the image with:
-          <video width="100%" muted autoplay loop playsinline>
-            <source src="images/atad_demo.mp4" type="video/mp4">
-          </video>
-          -->
         </td>
         <td style="padding: 10px 14px; width:70%; vertical-align:middle;">
           <p class="paperTitle">ATAD Differential Game Framework for Multi-Robot Interactions</p>
@@ -246,7 +260,6 @@
             Differential-game framework and experimental evaluation for multi-robot interactions under real-world sensing and actuation imperfections.
           </p>
           <div class="links">
-            <!-- Add real links when you have them -->
             <a href="#" title="Add PDF link">[PDF]</a>
             <a href="#" title="Add code link">[Code]</a>
             <a href="#" title="Add talk/video link">[Video]</a>
